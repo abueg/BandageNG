@@ -165,7 +165,7 @@ static bool attemptToLoadSequencesFromFasta(AssemblyGraph &graph) {
     bool atLeastOneNodeSequenceLoaded = false;
     std::vector<QString> names;
     std::vector<QByteArray> sequences;
-    utils::readFastaFile(fastaName, &names, &sequences);
+    utils::readFastaFile(fastaName, names, sequences);
 
     for (size_t i = 0; i < names.size(); ++i) {
         QString name = names[i];
@@ -582,7 +582,7 @@ class FastaAssemblyGraphBuilder : public AssemblyGraphBuilder {
 
         std::vector<QString> names;
         std::vector<QByteArray> sequences;
-        utils::readFastaFile(fileName_, &names, &sequences);
+        utils::readFastaFile(fileName_, names, sequences);
 
         std::vector<QString> circularNodeNames;
         for (size_t i = 0; i < names.size(); ++i) {
@@ -943,7 +943,7 @@ class TrinityAssemblyGraphBuilder : public AssemblyGraphBuilder {
 
         std::vector<QString> names;
         std::vector<QByteArray> sequences;
-        utils::readFastaFile(fileName_, &names, &sequences);
+        utils::readFastaFile(fileName_, names, sequences);
 
         std::vector<QString> edgeStartingNodeNames;
         std::vector<QString> edgeEndingNodeNames;
